@@ -1,9 +1,10 @@
 'use strict';
 
 exports.doGet = (req, res, next) => {
-  res.send('Some photos');
+  res.render('photos', { message: 'Some photos' });
 };
 
 exports.printParams = (req, res, next) => {
-  res.send(req.params.title);
+  const paramsTitle = req.params.title;
+  res.render('photos', { message: paramsTitle });
 };
